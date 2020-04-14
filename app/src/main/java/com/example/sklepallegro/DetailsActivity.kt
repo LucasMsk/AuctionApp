@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.text.Html
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.example.sklepallegro.models.Offer
-import com.squareup.picasso.Picasso
 
 public class DetailsActivity : AppCompatActivity() {
 
@@ -22,7 +22,7 @@ public class DetailsActivity : AppCompatActivity() {
             description.text = Html.fromHtml(offer.description)
             supportActionBar?.title = offer.name
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
-            Picasso.get().load(offer.thumbnailUrl).into(imageView)
+            Glide.with(applicationContext).load(offer.thumbnailUrl).into(imageView)
         }
 
 

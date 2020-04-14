@@ -8,11 +8,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.sklepallegro.models.Offer
-import com.squareup.picasso.Picasso
 
-class OfferListAdapter(private var offerList: List<Offer>, private val context: Context) :
+class OfferListAdapter( private val context: Context) :
     RecyclerView.Adapter<OfferListAdapter.MyViewHolder>() {
+
+    private var offerList = listOf<Offer>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view, parent, false))
@@ -27,12 +29,17 @@ class OfferListAdapter(private var offerList: List<Offer>, private val context: 
         val price = offer.price.amount.toString() + " " + offer.price.currency
         holder.titleTextView.text = offer.name
         holder.priceTextView.text = price
-
-
-        Picasso.get().load(offer.thumbnailUrl).into(holder.imageView)
-
         holder.offer = offer
+
+        Glide.with(context).load(offer.thumbnailUrl).into(holder.imageView)
+
     }
+
+    fun update(newOfferList: List<Offer>) {
+        offerList = newOfferList
+        this.notifyDataSetChanged()
+    }
+
 
     class MyViewHolder(itemView: View, var offer: Offer? = null) :
         RecyclerView.ViewHolder(itemView) {
@@ -48,6 +55,7 @@ class OfferListAdapter(private var offerList: List<Offer>, private val context: 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, DetailsActivity::class.java)
                 intent.putExtra("offer", offer)
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 itemView.context.startActivity(intent)
             }
         }

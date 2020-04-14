@@ -12,7 +12,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         id_recyclerView.layoutManager =
             LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
-        val offerViewModel = OfferViewModel(applicationContext, id_recyclerView)
-
+        val offerListAdapter = OfferListAdapter(applicationContext)
+        id_recyclerView.adapter = offerListAdapter
+        val offerViewModel = OfferViewModel(offerListAdapter)
     }
 }
