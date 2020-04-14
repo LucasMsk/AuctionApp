@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/img_item"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp" />
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img_item"
+            android:layout_toRightOf="@id/img_item"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center_vertical"
+            android:paddingTop="5dp"
+            android:singleLine="true"
+            android:text="Title"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_title"
+            android:layout_toEndOf="@id/img_item"
+            android:layout_toRightOf="@id/img_item"
+            android:gravity="center_vertical"
+            android:paddingTop="5dp"
+            android:text="cena:  " />
+
+        <TextView
+            android:id="@+id/txt_price_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_title"
+            android:layout_alignBaseline="@id/txt_price"
+            android:layout_toEndOf="@id/txt_price"
+            android:layout_toRightOf="@id/txt_price"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_vertical"
+            android:text="200,00 PLN"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="#000000" />
+</androidx.cardview.widget.CardView>
