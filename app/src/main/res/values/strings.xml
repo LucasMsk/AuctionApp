@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Sklep Allegro</string>
+    <string name="errorFetch">Please check your internet connection.</string>
 </resources>

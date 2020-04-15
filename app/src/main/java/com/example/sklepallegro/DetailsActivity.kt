@@ -24,7 +24,5 @@ public class DetailsActivity : AppCompatActivity() {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
             Glide.with(applicationContext).load(offer.thumbnailUrl).into(imageView)
         }
-
-
     }
 }

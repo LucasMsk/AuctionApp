@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.sklepallegro.models.Offer
 
-class OfferListAdapter( private val context: Context) :
+class OfferListAdapter(private val context: Context) :
     RecyclerView.Adapter<OfferListAdapter.MyViewHolder>() {
 
     private var offerList = listOf<Offer>()
