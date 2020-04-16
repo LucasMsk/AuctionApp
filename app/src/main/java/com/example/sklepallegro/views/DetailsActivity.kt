@@ -1,4 +1,4 @@
-package com.example.sklepallegro
+package com.example.sklepallegro.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,9 +6,10 @@ import android.text.Html
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.example.sklepallegro.R
 import com.example.sklepallegro.models.Offer
 
-public class DetailsActivity : AppCompatActivity() {
+public class DetailsActivity() : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

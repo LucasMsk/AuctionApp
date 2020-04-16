@@ -1,4 +1,4 @@
-package com.example.sklepallegro
+package com.example.sklepallegro.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -9,7 +9,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.sklepallegro.R
 import com.example.sklepallegro.models.Offer
+import com.example.sklepallegro.views.DetailsActivity
 
 class OfferListAdapter(private val context: Context) :
     RecyclerView.Adapter<OfferListAdapter.MyViewHolder>() {
@@ -17,7 +19,13 @@ class OfferListAdapter(private val context: Context) :
     private var offerList = listOf<Offer>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view, parent, false))
+        return MyViewHolder(
+            LayoutInflater.from(context).inflate(
+                R.layout.item_view,
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount(): Int {
